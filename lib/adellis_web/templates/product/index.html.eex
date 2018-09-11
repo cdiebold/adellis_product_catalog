@@ -1,0 +1,60 @@
+<h1>Product index</h1>
+
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-6'>
+      <%= render AdellisWeb.QuoteView, "quote_form.html", conn: @conn, changeset: @changeset  %>
+    </div>
+    <div class='col'> </div>
+  </div>
+  <br/>
+  <div id='product-app'>
+    <div class='row'>
+      <div class='col'>
+        <form @submit.prevent="onSubmit" class='form-inline'>
+          <input class='form-control' placeholder='Search for products' v-model="search_term">
+          <button type="submit" class='btn btn-info'>Search</button>
+        </form>
+      </div>
+    </div>
+    <br/>
+    <div class='row'>
+      <div class='col'>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th scope='col'>Nsn</th>
+              <th scope='col'>Name</th>
+              <th scope='col'>Part Number</th>
+              <th scope='col'></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="product in displayProducts">
+              <td>{{product.nsn}}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.nsn_formatted }}</td>
+              <td><button class='btn btn-info' >Info</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <nav aria-label='Product pagination navigation'>
+          <ul class='pagination justify-content-center'>
+            <li class="page-item">
+              <button class='page-link' @click="first" v-bind:disabled="current_page == 1">First</button>
+            </li>
+            <li class="page-item">
+              <button class="page-link" @click="previous" v-bind:disabled="current_page == 1">Previous</button>
+            </li>
+            <li class="page-item" >
+              <button class="page-link" v-bind:disabled="current_page == total_pages" @click="next">Next</button>
+            </li>
+            <li class="page-item">
+              <button class='page-link' @click="last"  v-bind:disabled="current_page == total_pages">Last</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

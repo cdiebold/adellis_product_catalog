@@ -1,0 +1,82 @@
+<section class="custom-header">
+  <div class="custom-header__text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary--main">NSN Parts</span>
+      <span class="heading-primary--sub">should not be hard to find</span>
+    </h1>
+    <a href="<%= product_path(@conn, :index) %>" class="custom-btn custom-btn--white custom-btn--animated">Browse Parts</a>
+  </div>
+</section>
+<main>
+  <section class='section-about'>
+    <div class='u-center-text u-margin-bottom-8'>
+      <h2 class='heading-secondary'>Our Story</h2>
+    </div>
+    <div class="row">
+      <div class='col-6'>
+        <h3 class='heading-tertiary u-margin-bottom-2'>Our Founding</h3>
+        <p class='paragraph'>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi quo recusandae voluptatibus animi perferendis, tempora
+          voluptatem est, nam saepe, veritatis ipsa et sint? Temporibus officiis quo maxime voluptas veniam rerum.
+        </p>
+        <h3 class='heading-tertiary u-margin-bottom-2'>Our Services</h3>
+        <p class='paragraph'>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi quo recusandae voluptatibus animi perferendis, tempora
+          voluptatem est, nam saepe, veritatis ipsa et sint? Temporibus officiis quo maxime voluptas veniam rerum.
+        </p>
+      </div>
+      <div class='col-6'>
+        <div class='composition'>
+          <img src="<%= static_path(@conn, "/images/tile.jpg") %>" alt="Photo 1" class='composition__photo composition__photo--p1'>
+          <img src="<%= static_path(@conn, "/images/tile.jpg") %>" alt="Photo 2" class='composition__photo composition__photo--p2'>
+          <img src="<%= static_path(@conn, "/images/tile.jpg") %>" alt="Photo 3" class='composition__photo composition__photo--p3'>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='section-features'>
+    <!-- <h2> Why Choose Us?</h2> -->
+    <div class='row'>
+      <div class='col-3'>
+        <div class='feature-box'>
+          <i class='feature-box__icon icon-basic-world'></i>
+          <h3 class='tertiary-heading u-margin-bottom-2'>Shipping to all 50 States</h3>
+          <p class='feature-box__text'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse animi id numquam alias labore illo laboriosam tempore praesentium
+            quod vero! Laudantium dignissimos esse et eum. Vel assumenda quos odit nobis.
+          </p>
+        </div>
+      </div>
+      <div class='col-3'>
+        <div class='feature-box'>
+          <span class='flag-icon flag-icon-um'></span>
+          <h3 class='tertiary-heading u-margin-bottom-2'>Veteran Owned</h3>
+          <p class='feature-box__text'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse animi id numquam alias labore illo laboriosam tempore praesentium
+            quod vero! Laudantium dignissimos esse et eum. Vel assumenda quos odit nobis.
+          </p>
+        </div>
+      </div>
+      <div class='col-3'>
+        <div class='feature-box'>
+          <i class='feature-box__icon basic-clockwise'></i>
+          <h3 class='tertiary-heading u-margin-bottom-2'>Quick Quote Turnover</h3>
+          <p class='feature-box__text'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse animi id numquam alias labore illo laboriosam tempore praesentium
+            quod vero! Laudantium dignissimos esse et eum. Vel assumenda quos odit nobis.
+          </p>
+        </div>
+      </div>
+      <div class='col-3'>
+        <div class='feature-box'>
+          <i class='feature-box__icon icon-basic-heart'></i>
+          <h3 class='tertiary-heading u-margin-bottom-2'>Customer Satisfaction</h3>
+          <p class='feature-box__text'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse animi id numquam alias labore illo laboriosam tempore praesentium
+            quod vero! Laudantium dignissimos esse et eum. Vel assumenda.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

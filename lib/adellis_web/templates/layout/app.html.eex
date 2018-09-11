@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>
+    <%= title() %>
+  </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="<%= static_path(@conn, "/css/vendor/linea-basic.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/vendor/flag-icon-css/css/flag-icon.min.css") %>"> -->
+
+  <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <%= render "app_nav.html", conn: @conn %>
+  <%= if get_flash(@conn, :info) do %>
+  <div class='alert alert-success' role='alert'>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h3>
+      <%= get_flash(@conn, :info) %>
+    </h3>
+  </div>
+  <% end %>
+  <%= if get_flash(@conn, :error) do %>
+  <div class='alert alert-dander' role='alert'>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h3>
+      <%= get_flash(@conn, :error) %>
+    </h3>
+  </div>
+  <% end %>
+  <main role="main">
+    <%= render @view_module, @view_template, assigns %>
+  </main>
+  <%= render "app_footer.html", conn: @conn %>
+
+  <!-- Quick Quote popup -->
+  <div class='quote-popup' id="quote-popup">
+    <div class='quote-popup__content'>
+      <div class='quote-popup__left'>
+        <div class='container'>
+          <h2 class='heading-tertiary u-margin-bottom-medium u-center-text'>Quick Quote</h2>
+          <div class='card'>
+            <div class="card-body">
+              <%= render "quote-form.html" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='quote-popup__right'>
+        <a href="<%= page_path(@conn, :index) %>" class="popup__close" id='close'>&times;</a>
+      </div>
+    </div>
+  </div>
+  <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+</body>
+
+</html>

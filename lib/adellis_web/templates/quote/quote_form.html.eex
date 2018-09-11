@@ -1,0 +1,45 @@
+<%= form_for @changeset, quote_path(@conn, :create), [as: :quote, id: "quote-form"], fn f -> %>
+
+  <%= if @changeset.action do %>
+    <div id='form-error' class="alert alert-danger">
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      <h4>Please check the form for errors</h4>
+    </div>
+  <% end %>
+
+  <div class='form-row'>
+    <div class='col form-group'>
+      <%= label f , :first_name%>
+      <%= text_input f, :first_name, class: "form-control" %>
+      <%= error_tag f, :first_name %>
+    </div>
+    <div class='col form-group'>
+      <%= label f , :last_name %>
+      <%= text_input f, :last_name, class: "form-control" %>
+      <%= error_tag f, :last_name %>
+    </div>
+  </div>
+  <div class='form-row'>
+    <div class='col form-group'>
+      <%= label f , :email_address %>
+      <%= text_input f, :email_address, class: "form-control" %>
+      <%= error_tag f, :email_address %>
+    </div>
+    <div class='col form-group'>
+      <%= label f , :phone_number %>
+      <%= text_input f, :phone_number, class: "form-control" %>
+      <%= error_tag f, :phone_number %>
+    </div>
+  </div>
+  <div class='form-row '>
+    <div class='col  form-group'>
+      <%= label f , :company_name %>
+      <%= text_input f, :company_name, class: "form-control" %>
+      <%= error_tag f, :company_name %>
+    </div>
+  </div>
+  <br>
+  <%= submit "Quote", class: "btn btn-lg btn-info" %>
+<% end %>

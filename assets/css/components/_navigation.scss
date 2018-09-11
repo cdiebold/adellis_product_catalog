@@ -1,0 +1,10 @@
+$navbarColor: #0c132e;
+.navbar {
+    background-color: $navbarColor;
+}
+
+.nav-item {
+    .nav-link {
+        color: #fff;
+    }
+}
